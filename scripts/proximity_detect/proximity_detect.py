@@ -2,7 +2,8 @@ import machine
 import time
 
 
-def seek(servo_pin=None, analog_pin=None, red_pin=None, green_pin=None, min_position=30, max_position=130, distance_value=600):
+def run(servo_pin=None, analog_pin=None, red_pin=None, green_pin=None,
+        min_position=30, max_position=130, distance_value=600):
     if not servo_pin:
         servo_pin = machine.Pin(12)
 
@@ -40,7 +41,7 @@ def seek(servo_pin=None, analog_pin=None, red_pin=None, green_pin=None, min_posi
             else:
                 red_pin.low()
                 green_pin.high()
- 
+
             servo.duty(position)
             time.sleep_ms(100)
         time.sleep(1)
