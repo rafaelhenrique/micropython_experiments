@@ -4,13 +4,14 @@ import time
 
 def blink_loop(pin=None):
     if not pin:
-        pin = machine.Pin(16, machine.Pin.OUT) # create output pin on GPIO0
+        pin = machine.Pin(16, machine.Pin.OUT)  # create output pin on GPIO0
 
     while True:
-        pin.low() # set pin to low
+        pin.low()  # set pin to low
         time.sleep(3)
-        pin.high() # set pin to high
+        pin.high()  # set pin to high
         time.sleep(3)
+
 
 def servo_loop(pin=None, min_position=30, max_position=130):
     if not pin:
@@ -27,4 +28,3 @@ def servo_loop(pin=None, min_position=30, max_position=130):
             servo.duty(position)
 
         time.sleep(3)
-
